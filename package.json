@@ -1,0 +1,30 @@
+{
+  "name": "QRF",
+  "version": "1.0.0",
+  "description": "a simple web app built in  node.js to generate random quotes and facts  to the user",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RANDOM-Q-F/QRF.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RANDOM-Q-F/QRF/issues"
+  },
+  "homepage": "https://github.com/RANDOM-Q-F/QRF#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "pg": "^8.5.1",
+    "superagent": "^6.1.0",
+    "throw": "^1.1.0"
+  }
+}
