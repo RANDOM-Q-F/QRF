@@ -1,5 +1,5 @@
 {
-  "name": "QRF",
+  "name": "quoti",
   "version": "1.0.0",
   "description": "a simple web app built in  node.js to generate random quotes and facts  to the user",
   "main": "server.js",
@@ -9,22 +9,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RANDOM-Q-F/QRF.git"
+    "url": "git+https://github.com/RANDOM-Q-F/quoti.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/RANDOM-Q-F/QRF/issues"
+    "url": "https://github.com/RANDOM-Q-F/quoti/issues"
   },
-  "homepage": "https://github.com/RANDOM-Q-F/QRF#readme",
+  "homepage": "https://github.com/RANDOM-Q-F/quoti#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "pg": "^8.5.1",
-    "superagent": "^6.1.0",
-    "throw": "^1.1.0"
+    "superagent": "^6.1.0"
   }
 }
