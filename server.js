@@ -20,7 +20,7 @@ const PORT = process.env.PORT || 3001;
 //Handel Routes ==================================================
 app.get('/', handleHome);
 // app.get('/favorites', handleFav);
-// app.get('/aboutus', handleAbout);
+app.get('/aboutus', handleAbout);
 app.get('/quote', handleFQ);
 
 
@@ -40,9 +40,9 @@ function handleHome(req, res) {
 // function handleFav(req, res){
 //   res.send('i am running');
 // }
-// function handleAbout(req, res){
-//   res.send('i am running');
-// }
+function handleAbout(req, res){
+  res.render('about-us');
+}
 
 // Quotes Function
 function handleFQ(req, res) {
