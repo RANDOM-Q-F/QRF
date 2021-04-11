@@ -10,24 +10,24 @@
         <main>
 
             <div>
-                <% let uniqueOptions = []; %>
+                <% let uniqueOptions=[]; %>
 
-                    <% allQuotes.forEach( quote => { %>
+                    <% allQuotes.forEach( quote=> { %>
                         <% if (!uniqueOptions.includes(quote.category) && quote.category) { %>
                             <% uniqueOptions.push(quote.category); }}); %>
-
-                                <select>
-                    <% uniqueOptions.forEach( option => { %>   
-                    <option value="<%= option %>">
-                        <%= option %>
-                    </option>
-                    <% }); %>
-                </select>
+                                <select id="list">
+                                    <option value="All Quotes">All Quotes</option>
+                                    <% uniqueOptions.forEach( option=> { %>
+                                        <option value="<%= option %>">
+                                            <%= option %>
+                                        </option>
+                                        <% }); %>
+                                </select>
             </div>
 
 
             <div class="container">
-                <% allQuotes.forEach( quote => { %>
+                <% allQuotes.forEach( quote=> { %>
                     <div class="eachContainerQuote <%= quote.category %>">
                         <p>
                             "
@@ -59,7 +59,9 @@
 
 
         <%- include('partials/footer') %>
-
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+                integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+            <script src="/app.js"></script>
     </body>
 
 </html>
