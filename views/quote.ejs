@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('partials/head',{page_title: 'Quotes' }) %>
+</head>
+
+<body>
+
+    <main>
+        <select name="tags">
+            <% list.forEach(element=> { %>
+                <option value="<%= element %>">
+                    <%= element %>
+                </option>
+                <% }); %>
+        </select>
+
+        <div class="container">
+            <% allQuote.forEach(element=>{ %>
+                <div class="eachContainerQuote <%= element.tag%>">
+                    <p>
+                        <%= element.text%>
+                    </p>
+                    <h5>
+                        <%= element.author%>
+                    </h5>
+                </div>
+                <% })%>
+        </div>
+    </main>
+    <%- include('partials/footer') %>
+
+</body>
+
+</html>
