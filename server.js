@@ -51,9 +51,14 @@ function handleAbout(req, res) {
 // search Function
 function handleSearch(req, res) {
   console.log(req.query);
-  const countNum = req.query.search[1];
-  const authorName = req.query.search[0];
-  const url = `https://goquotes-api.herokuapp.com/api/v1/random/${countNum}?type=author&val=${authorName}`;
+  // const countNum = req.query.search[1];
+  const value = req.query.search;
+  const type =req.query.searchType;
+  // const url = `https://goquotes-api.herokuapp.com/api/v1/random/${countNum}?type=${type}&val=${value}`;
+
+  const url = `https://goquotes-api.herokuapp.com/api/v1/all?type=${type}&val=${value}`;
+
+  
   console.log(url);
   superagent.get(url)
     .then(apiResponse => apiResponse.body.quotes.map(quote => new Quote(quote)))

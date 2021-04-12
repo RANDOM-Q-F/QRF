@@ -11,8 +11,13 @@
         <main>
             <form action="/search" method="get">
                 </legend>search<legend>
-                    <input type="text" name="search" placeholder="Author Name" required>
-                    <input type="number" name="search" min="1">
+                    <input type="text" name="search" placeholder="Entar Author or category" required>
+                    <!-- <input type="number" name="search" min="1"> -->
+                    <label>auther</label>
+                    <input type="radio"  name="searchType"  value="author">
+                    <label>category</label>
+                    <input type="radio"  name="searchType" value="tag">
+
                     <input type="submit">
             </form>
             <div>
