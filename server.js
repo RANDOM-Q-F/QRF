@@ -27,8 +27,9 @@ const PORT = process.env.PORT || 3001;
 app.get('/', handleHome);
 app.get('/favorites', handleFav);
 app.get('/aboutus', handleAbout);
-app.get('/quote', handleQuotes);
+app.get('/search', handleSearch);
 app.post('/addlike', handleLike);
+app.get('/quotes', handleQuotes);
 
 //Port listener ===================================================
 app.listen(PORT, () => {
@@ -47,13 +48,25 @@ function handleAbout(req, res) {
   res.render('about-us');
 }
 
-// Quotes Function
-function handleQuotes(req, res) {
+// search Function
+function handleSearch(req, res) {
   console.log(req.query);
   const countNum = req.query.search[1];
   const authorName = req.query.search[0];
   const url = `https://goquotes-api.herokuapp.com/api/v1/random/${countNum}?type=author&val=${authorName}`;
   console.log(url);
+  superagent.get(url)
+    .then(apiResponse => apiResponse.body.quotes.map(quote => new Quote(quote)))
+    .then(resultObjects => res.render('searches', { allQuotes: resultObjects }))
+    .catch(error => { res.send(`Something Went Wrong ${error}`); });
+}
+
+
+// qoutes  function
+function handleQuotes(req, res) {
+  
+ 
+  const url = `https://goquotes-api.herokuapp.com/api/v1/random?count=25`;
   superagent.get(url)
     .then(apiResponse => apiResponse.body.quotes.map(quote => new Quote(quote)))
     .then(resultObjects => res.render('quote', { allQuotes: resultObjects }))
