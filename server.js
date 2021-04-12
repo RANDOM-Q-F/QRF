@@ -30,7 +30,6 @@ app.get('/aboutus', handleAbout);
 app.get('/quote', handleQuotes);
 app.post('/addlike', handleLike);
 
-
 //Port listener ===================================================
 app.listen(PORT, () => {
   console.log(`Listening at ${PORT}`);
@@ -50,15 +49,15 @@ function handleAbout(req, res) {
 
 // Quotes Function
 function handleQuotes(req, res) {
-  const url = 'https://goquotes-api.herokuapp.com/api/v1/random?count=25';
-
+  console.log(req.query);
+  const countNum = req.query.search[1];
+  const authorName = req.query.search[0];
+  const url = `https://goquotes-api.herokuapp.com/api/v1/random/${countNum}?type=author&val=${authorName}`;
+  console.log(url);
   superagent.get(url)
     .then(apiResponse => apiResponse.body.quotes.map(quote => new Quote(quote)))
     .then(resultObjects => res.render('quote', { allQuotes: resultObjects }))
-    .catch(error => {
-      console.log('Promise Rejection Error Being Handled');
-      // response.render('pages/error', { errorText: error });
-    });
+    .catch(error => { res.send(`Something Went Wrong ${error}`); });
 }
 
 // Constructor Functions ============================================
@@ -102,3 +101,4 @@ function handleLike(req, res) {
 function error(err) {
   return `Oops! Something Went Wrong ${err}`;
 }
+
