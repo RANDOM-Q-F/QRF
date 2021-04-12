@@ -14,6 +14,7 @@ const methodOverride = require('method-override');
 const app = express();
 app.use(cors());
 app.set('view engine', 'ejs');
+app.use(express.static('img'));
 app.use(express.static('public'));
 app.use(express.static('js'));
 
