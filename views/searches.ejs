@@ -9,59 +9,58 @@
 
 
         <main>
-          
-            <div>
+            <%- include('partials/searchField') %>
 
-                <% let uniqueOptions=[]; %>
+                <div>
+
+                    <% let uniqueOptions=[]; %>
+                        <% allQuotes.forEach( quote=> { %>
+                            <% if (!uniqueOptions.includes(quote.category) && quote.category) { %>
+                                <% uniqueOptions.push(quote.category); }}); %>
+                                    <select id="list">
+                                        <option value="All Quotes">All Quotes</option>
+                                        <% uniqueOptions.forEach( option=> { %>
+                                            <option value="<%= option %>">
+                                                <%= option %>
+                                            </option>
+                                            <% }); %>
+                                    </select>
+                </div>
+                <div class="container">
                     <% allQuotes.forEach( quote=> { %>
-                        <% if (!uniqueOptions.includes(quote.category) && quote.category) { %>
-                            <% uniqueOptions.push(quote.category); }}); %>
-                                <select id="list">
-                                    <option value="All Quotes">All Quotes</option>
-                                    <% uniqueOptions.forEach( option=> { %>
-                                        <option value="<%= option %>">
-                                            <%= option %>
-                                        </option>
-                                        <% }); %>
-                                </select>
-            </div>
-            <div class="container">
-                <% allQuotes.forEach( quote=> { %>
-                    <div class="eachContainerQuote <%= quote.category %>">
-                        <p>
-                            "
-                            <%= quote.quote %> "
-                        </p>
-                        <h3>
-                            -
-                            <%= quote.author %>
-                        </h3>
-                        <h4>
-                            Category:
-                            <%= quote.category %>
-                        </h4>
-                        <h5>
-                            Is Liked?
-                            <%= quote.liked %>
-                        </h5>
-                        <form action="/addLike" method="POST">
-                            <input type="hidden" name="quote" value="<%= quote.quote %>">
-                            <input type="hidden" name="author" value="<%= quote.author %>">
-                            <input type="hidden" name="category" value="<%= quote.category %>">
-                            <input type="hidden" name="liked" value="<%= quote.liked %>">
-                            <input type="submit" name="submit" value="Like">
-                        </form>
-                    </div>
-                    <% })%>
-            </div>
+                        <div class="eachContainerQuote <%= quote.category %>">
+                            <p>
+                                "
+                                <%= quote.quote %> "
+                            </p>
+                            <h3>
+                                -
+                                <%= quote.author %>
+                            </h3>
+                            <h4>
+                                Category:
+                                <%= quote.category %>
+                            </h4>
+                            <h5>
+                                Is Liked?
+                                <%= quote.liked %>
+                            </h5>
+                            <form action="/addLike" method="POST">
+                                <input type="hidden" name="quote" value="<%= quote.quote %>">
+                                <input type="hidden" name="author" value="<%= quote.author %>">
+                                <input type="hidden" name="category" value="<%= quote.category %>">
+                                <input type="hidden" name="liked" value="<%= quote.liked %>">
+                                <button type="submit">Save</button>
+                            </form>
+                        </div>
+                        <% })%>
+                </div>
         </main>
 
 
 
         <%- include('partials/footer') %>
-            <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-                integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-            <script src="/app.js"></script>
+
     </body>
 
 </html>
