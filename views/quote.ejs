@@ -56,12 +56,12 @@
                             Is Liked?
                             <%= quote.liked %>
                         </h5>
-                        <form action="/addLike" method="POST">
+                        <form action="/addlike" method="POST">
                             <input type="hidden" name="quote" value="<%= quote.quote %>">
                             <input type="hidden" name="author" value="<%= quote.author %>">
                             <input type="hidden" name="category" value="<%= quote.category %>">
                             <input type="hidden" name="liked" value="<%= quote.liked %>">
-                            <input type="submit" name="submit" value="Like">
+                            <input type="submit" class="liked" name="submit" value="Like">
                         </form>
                     </div>
                     <% })%>
