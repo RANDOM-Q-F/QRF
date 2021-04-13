@@ -46,30 +46,30 @@
             </div>
 
             <div class="carrdContainer">
-            <% allQuotes.forEach( quote=> { %>
+                <% allQuotes.forEach( quote=> { %>
                     <div class="eachContainerQuote <%= quote.category %>">
 
-                                <h2>
-                                    <%= quote.author %>
-                                </h2>
-                                <hr>
-                                <p>
-                                    <%= quote.quote %>
-                                </p>
-                                <h2>Category:
-                                    <%= quote.category %>
-                                </h2>
+                        <h2>
+                            <%= quote.author %>
+                        </h2>
+                        <hr>
+                        <p>
+                            <%= quote.quote %>
+                        </p>
+                        <h2>Category:
+                            <%= quote.category %>
+                        </h2>
 
-                            <form action="/addlike" method="POST">
-                                <input type="hidden" name="quote" value="<%= quote.quote %>">
-                                <input type="hidden" name="author" value="<%= quote.author %>">
-                                <input type="hidden" name="category" value="<%= quote.category %>">
-                                <input type="hidden" name="liked" value="<%= quote.liked %>">
-                                <input type="submit" class="liked" name="submit" value="Like">
-                            </form>
+                        <form action="/addlike" method="POST">
+                            <input type="hidden" name="quote" value="<%= quote.quote %>">
+                            <input type="hidden" name="author" value="<%= quote.author %>">
+                            <input type="hidden" name="category" value="<%= quote.category %>">
+                            <input type="hidden" name="liked" value="<%= quote.liked %>">
+                            <input type="submit" class="liked" name="submit" value="Like">
+                        </form>
                     </div>
                     <% })%>
-                </div>
+            </div>
         </main>
 
 
@@ -77,7 +77,13 @@
         <%- include('partials/footer') %>
             <script src="https://code.jquery.com/jquery-3.6.0.min.js"
                 integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
             <script src="/app.js"></script>
+            <script>
+                $('.liked').on('click', () => {
+                    swal('Liked!');
+                });
+            </script>
     </body>
 
 </html>
