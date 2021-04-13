@@ -33,6 +33,8 @@ app.get('/about-us', handleAbout);
 app.get('/search', handleSearch);
 app.post('/addlike', handleLike);
 app.get('/quote', handleQuotes);
+app.delete('/quote', deleteQuoti);
+
 app.use('*', (request, response) => response.status(404).send('This route does not exist'));
 
 //Port listener ===================================================
@@ -96,7 +98,6 @@ function handleFav(req, res) {
   //   if (dataDB.rowCount) {
 
     // res.render('favorite');
-
     res.render('favorite', { quotes: dataDB.rows });
   //   }else{
   //     res.render('favorite', { quotes: dataDB.rows[0] });
@@ -119,7 +120,14 @@ function handleLike(req, res) {
     });
 
 }
-
+// Delete Function ================================================
+function deleteQuoti(req, res){
+  let id = req.body.id;
+  let SQL = 'DELETE FROM quotes WHERE id=$1';
+  client.query(SQL, [id]).then(result => {
+    res.redirect('/favorite');
+  });
+}
 //Error function =====================================================
 function error(err) {
   return `Oops! Something Went Wrong ${err}`;
