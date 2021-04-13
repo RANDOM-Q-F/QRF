@@ -26,11 +26,11 @@ const PORT = process.env.PORT || 3001;
 
 //Handel Routes ==================================================
 app.get('/', handleHome);
-app.get('/favorites', handleFav);
-app.get('/aboutus', handleAbout);
+app.get('/favorite', handleFav);
+app.get('/about-us', handleAbout);
 app.get('/search', handleSearch);
 app.post('/addlike', handleLike);
-app.get('/quotes', handleQuotes);
+app.get('/quote', handleQuotes);
 
 //Port listener ===================================================
 app.listen(PORT, () => {
