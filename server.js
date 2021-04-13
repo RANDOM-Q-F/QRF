@@ -97,7 +97,7 @@ function handleFav(req, res) {
 
     // res.render('favorite');
 
-      res.render('favorite', { quotes: dataDB.rows });
+    res.render('favorite', { quotes: dataDB.rows });
   //   }else{
   //     res.render('favorite', { quotes: dataDB.rows[0] });
   //   }
