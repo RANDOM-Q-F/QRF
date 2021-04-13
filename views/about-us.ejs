@@ -1,85 +1,123 @@
 <!DOCTYPE html>
 <html>
-  <%- include('partials/head',{page_title: 'about' }) %>
+<%- include('partials/head',{page_title: 'about' }) %>
+
+<body id="body">
+    <%- include('partials/header') %>
+
+    <div class="about-section">
+      <h1>About Us Page</h1>
+      <p class="our">Some text about who we are and what we do.</p>
+      <p class="our">Resize the browser window to see that this page is responsive by the way.</p>
+    </div>
+
+  <div class="row">
+
+      <div class="column">
+        <div class="card">
+          <img src="/reema.png" alt="Reema" id="imge">
+          <div id="containerrr">
+            <h2>Reema Eilouti</h2>
+            <p class="title">web developer</p>
+            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+
+            <div class="share-button">
+              <span>Contact</span>
+              <a href="#"><i class="fab fa-facebook-f"></i><img src="/facebook-circle-fill.png"></a>
+              <a href="https://github.com/reema-eilouti"><i class="fab fa-twitter"></i><img src="/github-fill.png"></a>
+              <a href="https://www.linkedin.com/in/reema-eilouti"><i class="fab fa-instagram"></i><img src="/linkedin-box-fill.png"></a>
+              <a href="reema.eilouti@gmail.com"><i class="fab fa-linkedin-in"></i><img src="/mail-line.png"></a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <img id="imge" src="/mohammad.jpg" alt="Mohammad">
+          <div id="containerrr">
+            <h2>Mohammad Momani</h2>
+            <p class="title">web developer</p>
+            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+
+            <div class="share-button">
+              <span>Contact</span>
+              <a href="https://www.facebook.com/MohammadMomani1996/"><i class="fab fa-facebook-f"></i><img src="/facebook-circle-fill.png"></a>
+              <a href="https://github.com/M7madMomani2"><i class="fab fa-twitter"></i><img src="/github-fill.png"></a>
+              <a href="https://www.linkedin.com/in/mohammad-khaldun-7000b41b1/"><i class="fab fa-instagram"></i><img src="/linkedin-box-fill.png"></a>
+              <a href="mkhm.work@gmail.com"><i class="fab fa-linkedin-in"></i><img src="/mail-line.png"></a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <img id="imge" src="/eid.jpg" alt="Eid">
+          <div id="containerrr">
+            <h2>Eid Sukariah</h2>
+            <p class="title">web developer</p>
+            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+
+            <div class="share-button">
+              <span>Contact</span>
+              <a href="https://web.facebook.com/eid.sukariah"><i class="fab fa-facebook-f"></i><img src="/facebook-circle-fill.png"></a>
+              <a href="https://github.com/eid-sukariah"><i class="fab fa-twitter"></i><img src="/github-fill.png"></a>
+              <a href="https://www.linkedin.com/in/eid-sukariah-27339219a/"><i class="fab fa-instagram"></i><img src="/linkedin-box-fill.png"></a>
+              <a href="iameidsukariah@gmail.com"><i class="fab fa-linkedin-in"></i><img src="/mail-line.png"></a>
+            </div>
+
+          </div>
+        </div>
+      </div>
 
 
-<body>
+      <div class="column">
+        <div class="card">
+          <img id="imge" src="/layan.png" alt="Layan">
+          <div id="containerrr">
+            <h2>Layan Aboshaweesh</h2>
+            <p class="title">web developer</p>
+            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
 
-<div class="about-section">
-  <h1>About Us Page</h1>
-  <p>Some text about who we are and what we do.</p>
-  <p>Resize the browser window to see that this page is responsive by the way.</p>
+            <div class="share-button">
+              <span>Contact</span>
+              <a href="https://www.facebook.com/layan.a.shaweesh/"><i class="fab fa-facebook-f"></i><img src="/facebook-circle-fill.png"></a>
+              <a href="https://github.com/layanabushaweesh "><i class="fab fa-twitter"></i><img src="/github-fill.png"></a>
+              <a href="https://www.linkedin.com/in/layan-abu-shaweesh/ "><i class="fab fa-instagram"></i><img src="/linkedin-box-fill.png"></a>
+              <a href="layan_abushaweesh@yahoo.com"><i class="fab fa-linkedin-in"></i><img src="/mail-line.png"></a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+   
+
+    <div class="column">
+      <div class="card">
+        <img id="imge" src="/noor.jpg" alt="Noor" style="width:100%">
+        <div id="containerrr">
+          <h2>Nour Eddein</h2>
+          <p class="title">web developer</p>
+          <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+
+          <div class="share-button">
+            <span>Contact</span>
+            <a href="https://www.facebook.com/noureddein1/"><i class="fab fa-facebook-f"></i><img src="/facebook-circle-fill.png"></a>
+            <a href="https://github.com/noureddein"><i class="fab fa-twitter"></i><img src="/github-fill.png"></a>
+            <a href="https://www.linkedin.com/in/noureddein"><i class="fab fa-instagram"></i><img src="/linkedin-box-fill.png"></a>
+            <a href="noureddein@gmail.com"><i class="fab fa-linkedin-in"></i><img src="/mail-line.png"></a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
 </div>
+    <%- include('partials/footer') %>
+  </body>
 
-<h2 style="text-align:center">Our Team</h2>
-<div class="row">
-  <div class="column">
-    <div class="card">
-      <img src="#" alt="Reema" style="width:100%">
-      <div class="container">
-        <h2>Reema Eilouti</h2>
-        <p class="title">web developer</p>
-        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p>reema.eilouti@gmail.com</p>
-        <p><button class="button">Contact</button></p>
-      </div>
-    </div>
-  </div>
-
-  <div class="column">
-    <div class="card">
-      <img src="#" alt="Mohammad" style="width:100%">
-      <div class="container">
-        <h2>Mohammad Momani</h2>
-        <p class="title">web developer</p>
-        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p>mkhm.work@gmail.com</p>
-        <p><button class="button">Contact</button></p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="column">
-    <div class="card">
-      <img src="img/eid.png" alt="Eid" style="width:100%">
-      <div class="container">
-        <h2>Eid Sukariah</h2>
-        <p class="title">web developer</p>
-        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p>iameidsukariah@gmail.com</p>
-        <p><button class="button">Contact</button></p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="column">
-    <div class="card">
-      <img src="#" alt="Layan" style="width:100%">
-      <div class="container">
-        <h2>Layan Aboshaweesh</h2>
-        <p class="title">web developer</p>
-        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p>layan_abushaweesh99861096@yahoo.com</p>
-        <p><button class="button">Contact</button></p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="column">
-    <div class="card">
-      <img src="#" alt="Noor" style="width:100%">
-      <div class="container">
-        <h2>Nour Eddein</h2>
-        <p class="title">web developer</p>
-        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p>noureddein@gmail.com</p>
-        <p><button class="button">Contact</button></p>
-      </div>
-    </div>
-  </div>
-</div>
-<%- include('partials/footer') %>
-</body>
 </html>
