@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
 * {
     margin: 0;
@@ -18,7 +17,6 @@
 body {
     background: #f2f2f2;
 }
-
 
 /* header */
 
@@ -59,6 +57,7 @@ nav ul li a {
     text-decoration: none;
     font-size: 18px;
     padding: 8px 15px;
+    font-family: 'Rubik', sans-serif;
 }
 
 nav ul li a:hover {
@@ -67,51 +66,13 @@ nav ul li a:hover {
     box-shadow: 0 0 5px #94145b, 0 0 10px #94145b;
 }
 
-nav ul ul li a:hover {
-    box-shadow: none;
-}
-
-nav ul ul {
-    position: absolute;
-    top: 90px;
-    border-top: 3px solid #94145b;
-    opacity: 0;
-    visibility: hidden;
-    transition: top .3s;
-}
-
-nav ul ul ul {
-    border-top: none;
-}
-
 nav ul li:hover>ul {
     top: 70px;
     opacity: 1;
     visibility: visible;
 }
 
-nav ul ul li {
-    position: relative;
-    margin: 0px;
-    width: 150px;
-    float: none;
-    display: list-item;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-nav ul ul li a {
-    line-height: 50px;
-}
-
-nav ul ul ul li {
-    position: relative;
-    top: -60px;
-    left: 150px;
-}
-
-.show,
-.icon,
-#humIcon {
+.show, .icon, #humIcon {
     display: none;
 }
 
@@ -135,12 +96,10 @@ nav ul ul ul li {
         padding-left: 30px;
         width: 120px;
     }
-    .show+a,
-    ul {
+    .show+a, ul {
         display: none;
     }
-    nav ul li,
-    nav ul ul li {
+    nav ul li {
         display: block;
         width: 100%;
         text-align: center;
@@ -169,29 +128,8 @@ nav ul ul ul li {
         cursor: pointer;
         font-size: 25px;
     }
-    nav ul ul {
-        top: 70px;
-        border-top: 0px;
-        float: none;
-        position: static;
-        display: none;
-        opacity: 1;
-        visibility: visible;
-    }
-    nav ul ul a {
-        padding-left: 40px;
-    }
-    nav ul ul ul a {
-        padding-left: 80px;
-    }
-    nav ul ul ul li {
-        position: static;
-    }
     [id^=btn]:checked+ul {
         display: block;
-    }
-    nav ul ul li {
-        border-bottom: 0px;
     }
     span.cancel:before {
         content: '\f00d';
@@ -218,7 +156,6 @@ p {
     font-weight: 500;
 }
 
-
 /* main  */
 
 .text {
@@ -226,6 +163,7 @@ p {
     padding-bottom: 10px;
     background-color: white;
     text-align: center;
+    align-self: center;
     width: 50vw;
 }
 
@@ -233,12 +171,14 @@ p {
     color: #000;
     text-align: center;
     margin-top: 10px;
+    font-size: x-large;
 }
 
 .text p {
     color: #000;
+    text-align: justify;
     text-align-last: center;
-    font-size: medium;
+    font-size: larger;
     padding: 16px 44px;
     line-height: 1.6;
 }
@@ -264,7 +204,6 @@ p {
     align-self: center;
     height: min-content;
 }
-
 
 /* footer */
 
@@ -311,6 +250,7 @@ p {
     margin-right: 10px;
     text-decoration: none;
     border-radius: 4px;
+    font-family: 'Rubik', sans-serif;
 }
 
 .sci li a:hover {
@@ -331,6 +271,7 @@ p {
     width: 25%;
     margin-top: 3vh;
     text-align-last: center;
+    font-family: 'Rubik', sans-serif;
 }
 
 @media only screen and ( max-width: 968px) {
@@ -348,6 +289,7 @@ p {
     }
     .text {
         width: 100%;
+        font-family: 'Rubik', sans-serif;
     }
     .intro {
         display: flex;
@@ -358,5 +300,44 @@ p {
     #img-intro {
         width: 100%;
         height: auto;
+    }
+}
+
+.carrdContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.eachContainerQuote {
+    width: 40%;
+    padding: 54px;
+    box-shadow: 0 0 5px #94145b, 0 0 10px #94145b;
+    margin: 52px;
+    background-color: white;
+}
+
+.eachContainerQuote h2 {
+    color: #94145b;
+}
+
+@media only screen and ( max-width: 968px) {
+    .carrdContainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .eachContainerQuote {
+        width: 100%;
+        font-size: larger;
+        padding: 54px;
+        
+        box-shadow: 0 0 5px #94145b, 0 0 10px #94145b;
+        margin: 52px;
+        background-color: white;
+    }
+    .eachContainerQuote p {
+        font-size: medium;
+        color: #2c2c2c;
     }
 }
