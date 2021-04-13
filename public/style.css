@@ -1,15 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
 * {
     margin: 0;
     padding: 0;
     user-select: none;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    text-align: justify;
+    font-family: 'Rubik', sans-serif;
 }
 
 #imgbox {
     margin: 0 auto;
     width: 100%;
+    border-bottom: 3px solid #94145b;
 }
 
 body {
@@ -59,9 +62,9 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: rgb(246, 195, 10);
+    color: #94145b;
     border-radius: 5px;
-    box-shadow: 0 0 5px rgb(246, 195, 10), 0 0 10px rgb(246, 195, 10);
+    box-shadow: 0 0 5px #94145b, 0 0 10px #94145b;
 }
 
 nav ul ul li a:hover {
@@ -71,7 +74,7 @@ nav ul ul li a:hover {
 nav ul ul {
     position: absolute;
     top: 90px;
-    border-top: 3px solid rgb(246, 195, 10);
+    border-top: 3px solid #94145b;
     opacity: 0;
     visibility: hidden;
     transition: top .3s;
@@ -108,7 +111,7 @@ nav ul ul ul li {
 
 .show,
 .icon,
-input {
+#humIcon {
     display: none;
 }
 
@@ -140,6 +143,7 @@ input {
     nav ul ul li {
         display: block;
         width: 100%;
+        text-align: center;
     }
     nav ul li a:hover {
         box-shadow: none;
@@ -153,7 +157,7 @@ input {
         cursor: pointer;
     }
     .show:hover {
-        color: rgb(246, 195, 10);
+        color: #94145b;
     }
     .icon {
         display: block;
@@ -215,6 +219,53 @@ p {
 }
 
 
+/* main  */
+
+.text {
+    padding: 20px 36px;
+    padding-bottom: 10px;
+    background-color: white;
+    text-align: center;
+    width: 50vw;
+}
+
+.text h2 {
+    color: #000;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.text p {
+    color: #000;
+    text-align-last: center;
+    font-size: medium;
+    padding: 16px 44px;
+    line-height: 1.6;
+}
+
+.text hr {
+    margin: 0 auto;
+    width: 85px;
+    background-color: #9a144f;
+    height: 1px;
+    border: none;
+    margin-bottom: 11px;
+}
+
+.intro {
+    background-color: white;
+    display: flex;
+    margin: 3% auto;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+}
+
+#img-intro {
+    width: 50vw;
+    align-self: center;
+    height: min-content;
+}
+
+
 /* footer */
 
 .footer-div {
@@ -231,6 +282,7 @@ p {
 
 .cpayright p {
     text-align: center;
+    background-color: white;
 }
 
 .contactus2 ul {
@@ -240,10 +292,12 @@ p {
 .sci {
     margin-top: 30px;
     display: flex;
+    justify-content: center;
 }
 
 .sci li {
     list-style: none;
+    margin-bottom: 10px;
 }
 
 .sci li a {
@@ -260,7 +314,7 @@ p {
 }
 
 .sci li a:hover {
-    background: rgb(246, 195, 10);
+    background: #94145b;
 }
 
 .sci li a img {
@@ -273,11 +327,13 @@ p {
 }
 
 .contactus {
-    width: 480px;
-    margin: 8vh 10vw;
+    margin: 0 10vw;
+    width: 25%;
+    margin-top: 3vh;
+    text-align-last: center;
 }
 
-@media only screen and ( max-width: 768px) {
+@media only screen and ( max-width: 968px) {
     .footer-div {
         width: 100%;
         display: flex;
@@ -285,8 +341,22 @@ p {
         place-content: space-evenly;
         border-top: outset;
         text-align: justify;
+        justify-content: center;
     }
     .contactus {
         width: 80%;
+    }
+    .text {
+        width: 100%;
+    }
+    .intro {
+        display: flex;
+        flex-flow: column;
+        margin: 3% auto;
+        box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+    }
+    #img-intro {
+        width: 100%;
+        height: auto;
     }
 }
