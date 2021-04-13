@@ -1,11 +1,15 @@
-<header>
-    <nav>
-        <img src="" alt="LOGO" id="logo">
-        <ul>
-            <li><a href="/">HOME</a></li>
-            <li><a href="quote">QUOTE</a></li>
-            <li><a href="FAVORET">FAVORET</a></li>
-            <li><a href="/aboutus">ABOUT US</a></li>
-        </ul>
-    </nav>
-</header>
+<nav>
+    <div class="logo">
+        <img src="../logo.png" alt="logo">
+    </div>
+    <label for="humIcon" class="icon">
+     <span class="fa fa-bars"></span>
+     </label>
+    <input type="checkbox" id="humIcon">
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="<%= qPage%>">Quotes</a></li>
+        <li><a href="<%= fPage%>">Favorite</a></li>
+        <li><a href="<%= aPage%>">About us</a></li>
+    </ul>
+</nav>

@@ -7,21 +7,10 @@
 
     <body>
         <header>
-            <%- include('partials/header',{qPage : '#' ,fPage:'/favorite',aPage:'/about-us'}) %>
+            <%- include('partials/header',{qPage : '/quote' ,fPage:'/favorite',aPage:'/about-us'}) %>
         </header>
         <main>
-            <form action="/search" method="get">
-                </legend>search
-                <legend>
-                    <input type="text" name="search" placeholder="Entar Author or category" required>
-                    <!-- <input type="number" name="search" min="1"> -->
-                    <label>auther</label>
-                    <input type="radio" name="searchType" value="author">
-                    <label>category</label>
-                    <input type="radio" name="searchType" value="tag">
 
-                    <input type="submit">
-            </form>
             <div>
 
                 <% let uniqueOptions=[]; %>
