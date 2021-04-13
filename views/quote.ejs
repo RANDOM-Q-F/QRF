@@ -10,68 +10,73 @@
             <%- include('partials/header',{qPage : '#' ,fPage:'/favorite',aPage:'/about-us'}) %>
         </header>
         <main>
-            <form action="/search" method="get">
-                </legend>search
-                <legend>
-                    <input type="text" name="search" placeholder="Entar Author or category" required>
-                    <!-- <input type="number" name="search" min="1"> -->
-                    <label>auther</label>
-                    <input type="radio" name="searchType" value="author">
-                    <label>category</label>
-                    <input type="radio" name="searchType" value="tag">
+            <img id="imgbox" src="/undraw_social_sereni2ty_vhix.png" alt="">
 
-                    <input type="submit">
-            </form>
-            <div>
+            <div class="intro card2">
+                <div class="text">
+                    <form action="/search" method="get">
+                        </legend>search
+                        <legend>
+                            <input type="text" name="search" placeholder="Entar Author or category" required>
+                            <!-- <input type="number" name="search" min="1"> -->
+                            <label>auther</label>
+                            <input type="radio" name="searchType" value="author">
+                            <label>category</label>
+                            <input type="radio" name="searchType" value="tag">
 
-                <% let uniqueOptions=[]; %>
-                    <% allQuotes.forEach( quote=> { %>
-                        <% if (!uniqueOptions.includes(quote.category) && quote.category) { %>
-                            <% uniqueOptions.push(quote.category); }}); %>
-                                <select id="list">
-                                    <option value="All Quotes">All Quotes</option>
-                                    <% uniqueOptions.forEach( option=> { %>
-                                        <option value="<%= option %>">
-                                            <%= option %>
-                                        </option>
-                                        <% }); %>
-                                </select>
+                            <input type="submit">
+                    </form>
+
+
+
+                    <% let uniqueOptions=[]; %>
+                        <% allQuotes.forEach( quote=> { %>
+                            <% if (!uniqueOptions.includes(quote.category) && quote.category) { %>
+                                <% uniqueOptions.push(quote.category); }}); %>
+
+                                    <select id="list">
+                                        <option value="All Quotes">All Quotes</option>
+                                        <% uniqueOptions.forEach( option=> { %>
+                                            <option value="<%= option %>">
+                                                <%= option %>
+                                            </option>
+                                            <% }); %>
+                                    </select>
+                </div>
             </div>
-            <div class="container">
-                <% allQuotes.forEach( quote=> { %>
+
+            <div class="carrdContainer">
+            <% allQuotes.forEach( quote=> { %>
                     <div class="eachContainerQuote <%= quote.category %>">
-                        <p>
-                            "
-                            <%= quote.quote %> "
-                        </p>
-                        <h3>
-                            -
-                            <%= quote.author %>
-                        </h3>
-                        <h4>
-                            Category:
-                            <%= quote.category %>
-                        </h4>
-                        <h5>
-                            Is Liked?
-                            <%= quote.liked %>
-                        </h5>
-                        <form action="/addlike" method="POST">
-                            <input type="hidden" name="quote" value="<%= quote.quote %>">
-                            <input type="hidden" name="author" value="<%= quote.author %>">
-                            <input type="hidden" name="category" value="<%= quote.category %>">
-                            <input type="hidden" name="liked" value="<%= quote.liked %>">
-                            <input type="submit" class="liked" name="submit" value="Like">
-                        </form>
+
+                                <h2>
+                                    <%= quote.author %>
+                                </h2>
+                                <hr>
+                                <p>
+                                    <%= quote.quote %>
+                                </p>
+                                <h2>Category:
+                                    <%= quote.category %>
+                                </h2>
+
+                            <form action="/addlike" method="POST">
+                                <input type="hidden" name="quote" value="<%= quote.quote %>">
+                                <input type="hidden" name="author" value="<%= quote.author %>">
+                                <input type="hidden" name="category" value="<%= quote.category %>">
+                                <input type="hidden" name="liked" value="<%= quote.liked %>">
+                                <input type="submit" class="liked" name="submit" value="Like">
+                            </form>
                     </div>
                     <% })%>
-            </div>
+                </div>
         </main>
 
 
 
         <%- include('partials/footer') %>
-            <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+                integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
             <script src="/app.js"></script>
     </body>
 
