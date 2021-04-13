@@ -8,6 +8,12 @@
 
         </header>
         <main>
+            
+  <% quotes.forEach(quote =>{ %>
+            <h2> <%= quote.author %> </h2>
+             <p><%= quote.quote %> </p>
+             <h3><%= quote.category %> </h3>
+            <% }) %>
 
         </main>
 
