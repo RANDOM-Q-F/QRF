@@ -13,7 +13,12 @@
             <h2> <%= quote.author %> </h2>
              <p><%= quote.quote %> </p>
              <h3><%= quote.category %> </h3>
-            <% }) %>
+
+             <form action="/quote?_method=DELETE" method="POST">
+                <input  type="hidden" name="id"  value="<%= quote.id %>">
+                <input  type="submit" name="DELETE" id="submitBtn" value="DELETE">
+              </form>            
+              <% }) %>
 
         </main>
 
