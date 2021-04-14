@@ -67,7 +67,7 @@ nav ul li a {
 
 nav ul li a:hover {
     color: #94145b;
-    border-radius: 5px;
+    border-radius: 3px;
     box-shadow: 0 0 5px #94145b, 0 0 10px #94145b;
 }
 
@@ -169,7 +169,6 @@ p {
     background-color: white;
     text-align: center;
     align-self: center;
-    width: 50vw;
 }
 
 .text h2 {
