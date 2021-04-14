@@ -43,7 +43,7 @@ app.use('*', (request, response) => response.status(404).send('This route does n
 //Port listener ===================================================
 client.connect().then(() => {
   app.listen(PORT, () => {
-    console.log(`app is listning on port ${PORT}`);
+    console.log(`app is listening on port ${PORT}`);
   });
 }).catch(err => {
   console.log(`Sorry there is Database error ${err}`);
