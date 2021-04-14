@@ -15,15 +15,14 @@
             <div class="searchBar">
 
                 <div class="text">
-                    <form action="/search" method="get">
+                    <form action="/search" method="get" class="searchForm">
                         <input type="text" name="search" placeholder="Search.." required>
                         <!-- <input type="number" name="search" min="1"> -->
-                        
                             <label>category</label>
                             <input type="radio" name="searchType" value="tag">
                             <label>Author</label>
                             <input type="radio" name="searchType" value="author">
-                            <input type="submit" value="Search" id="btnSearch">
+                            <input type="submit" value="Go" id="btnSearch">
 
                     </form>
 
@@ -63,7 +62,7 @@
                             <%= quote.category %>
                         </h6>
 
-                        <form action="/addlike" method="POST" class=likeForm>
+                        <form action="/addlike" method="POST" class="likeForm">
                             <input type="hidden" name="quote" value="<%= quote.quote %>">
                             <input type="hidden" name="author" value="<%= quote.author %>">
                             <input type="hidden" name="category" value="<%= quote.category %>">
