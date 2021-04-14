@@ -71,7 +71,15 @@ function handleSearch(req, res) {
 
 
   superagent.get(url)
-    .then(apiResponse => apiResponse.body.quotes.map(quote => new Quote(quote)))
+    .then(apiResponse => {
+      if (apiResponse.status===200){
+        apiResponse.body.quotes.map(quote => new Quote(quote));}
+      else{
+        let arr = [{quote:'Try another one  ' , author: 'Devloper', category:'No Quote Found' , liked:false}];
+        return arr;
+      }
+
+    })
     .then(resultObjects => res.render('searches', { allQuotes: resultObjects }))
     .catch(error => { res.send(`Something Went Wrong ${error}`); });
 }
