@@ -45,12 +45,12 @@
                             Is Liked?
                             <%= quote.liked %>
                         </h5>
-                        <form action="/addLike" method="POST">
+                        <form action="/addLike" method="POST" class=likeForm>
                             <input type="hidden" name="quote" value="<%= quote.quote %>">
                             <input type="hidden" name="author" value="<%= quote.author %>">
                             <input type="hidden" name="category" value="<%= quote.category %>">
                             <input type="hidden" name="liked" value="<%= quote.liked %>">
-                            <input type="submit" name="submit" value="Like">
+                            <input type="submit" class="liked" name="submit" value="❤">
                         </form>
                     </div>
                     <% })%>
@@ -61,7 +61,33 @@
 
         <%- include('partials/footer') %>
             <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
             <script src="/app.js"></script>
+            <script>
+                $('.likeForm').on('submit', (event) => {
+                    event.preventDefault();
+
+                    const data = {
+                        quote: event.target.quote.value,
+                        author: event.target.author.value,
+                        category: event.target.author.value,
+                        liked: event.target.liked.value
+                    };
+
+                    console.log(data);
+                    console.log(data["author"]);
+
+                    // add loading
+
+                    $.ajax({
+                        url: '/addlike',
+                        method: 'POST',
+                        data: data
+                    }).then(() => {
+                        swal('Liked!');
+                    }).catch(error => console.log(error));
+                });
+            </script>
     </body>
 
 </html>
