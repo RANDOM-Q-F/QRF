@@ -8,27 +8,32 @@
 
         </header>
         <main>
+            <img id="imgbox" src="/undraw_Appreciation_re_p6rl.png" alt="">
 
-            <% quotes.forEach(quote=>{ %>
-                <h2>
-                    <%= quote.author %>
-                </h2>
-                <p>
-                    <%= quote.quote %>
-                </p>
-                <h3>
-                    <%= quote.category %>
-                </h3>
-                <h5>
-                    <%= quote.liked %>
-                </h5>
-                <form action="/quote?_method=DELETE" method="POST">
-                    <input type="hidden" name="id" value="<%= quote.id %>">
-                    <input type="submit" name="DELETE" id="submitBtn" value="DELETE">
 
-                </form>
-                <% }) %>
+            <div class="carrdContainer">
+                <% quotes.forEach(quote=>{ %>
+                    <div class="eachContainerQuote <%= quote.category %>">
 
+                        <h2>
+                            <%= quote.author %>
+                        </h2>
+                        <hr>
+                        <h4>
+                            <%= quote.quote %>
+                        </h4>
+                        <br><br>
+                        <h6>Category:
+                            Category <%= quote.category %>
+                        </h6>
+
+                        <form action="/quote?_method=DELETE" method="POST">
+                            <input type="hidden" name="id" value="<%= quote.id %>">
+                            <input type="submit" name="DELETE" id="submitBtn" value="DELETE">
+                        </form>
+                    </div>
+                    <% }) %>
+            </div>
         </main>
 
         <%- include('partials/footer') %>
