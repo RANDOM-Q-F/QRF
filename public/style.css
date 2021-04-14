@@ -133,7 +133,7 @@ nav ul li:hover>ul {
         cursor: pointer;
         font-size: 25px;
     }
-    [id^=btn]:checked+ul {
+    [id^=humIcon]:checked+ul {
         display: block;
     }
     span.cancel:before {
@@ -374,8 +374,8 @@ input[type=text] {
   }
   
   input[type=text]:focus {
-    width: 50%;
-  }
+    text-align-last: start;
+}
   input[type=button], input[type=submit], input[type=reset] {
     background-color: #94145b;
     border: none;
@@ -428,4 +428,23 @@ input[type=text] {
   #btnSearch{
       background-color: white;
       color:#94145b ;
+      justify-content: center;
   }
+.searchForm{
+    display: flex;
+}
+
+@media only screen and ( max-width: 968px) {
+    .searchForm{
+        display: flex;
+        flex-flow: column;
+    }
+    .searchForm input{
+        display: flex;
+
+    }
+    .searchForm label{
+        display: flex;
+
+    }
+}
