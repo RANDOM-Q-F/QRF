@@ -13,6 +13,11 @@
     width: 100%;
     border-bottom: 3px solid #94145b;
 }
+#imgbox2{
+    margin: 0 auto;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+}
 
 body {
     background: #f2f2f2;
@@ -315,10 +320,23 @@ p {
     box-shadow: 0 0 5px #94145b, 0 0 10px #94145b;
     margin: 52px;
     background-color: white;
+    text-align-last: center;
 }
 
 .eachContainerQuote h2 {
+    font-size: larger;
     color: #94145b;
+}
+.eachContainerQuote h4 {
+    font-size: medium;
+    text-align: justify;
+    text-align-last: center;
+    color: #000000;
+}
+.eachContainerQuote h6 {
+    font-size: small;
+    text-align-last: left;
+    color: #000000;
 }
 
 @media only screen and ( max-width: 968px) {
@@ -341,3 +359,73 @@ p {
         color: #2c2c2c;
     }
 }
+input[type=text] {
+    width: fit-content;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    transition: width 0.4s ease-in-out;
+  }
+  
+  input[type=text]:focus {
+    width: 50%;
+  }
+  input[type=button], input[type=submit], input[type=reset] {
+    background-color: #94145b;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  .searchBar{
+    display: flex;
+    background-color: #94145b;
+    justify-content: center;
+    text-align-last: center;}
+.searchBar .text{
+    background-color: #94145b;
+}
+  #list{
+    width: fit-content;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    transition: width 0.4s ease-in-out;
+
+  }
+  /* form{
+    display: flex;
+    place-content: flex-end;
+  } */
+
+  label{
+      color: white;
+      text-transform: uppercase;
+
+  }
+
+  #cat{
+    align-self: flex-end;
+    place-self: center;
+    /* margin: 0 178px; */
+    flex: auto;
+    display: inline-flex;
+  }
+  #btnSearch{
+      background-color: white;
+      color:#94145b ;
+  }
