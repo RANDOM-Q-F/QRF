@@ -280,7 +280,6 @@ p {
 }
 
 @media only screen and ( max-width: 968px) {
-
     .footer-div {
         width: 100%;
         display: flex;
