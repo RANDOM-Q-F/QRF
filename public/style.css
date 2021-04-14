@@ -308,6 +308,9 @@ p {
     }
 }
 
+
+
+/* quotes page  */
 .carrdContainer {
     display: flex;
     flex-wrap: wrap;
@@ -316,21 +319,24 @@ p {
 
 .eachContainerQuote {
     width: 40%;
-    padding: 54px;
+    padding: 2%;
     box-shadow: 0 0 5px #94145b, 0 0 10px #94145b;
-    margin: 52px;
+    margin: 4%;
     background-color: white;
     text-align-last: center;
 }
 
 .eachContainerQuote h2 {
+    margin-bottom: 1%;
     font-size: larger;
     color: #94145b;
 }
 .eachContainerQuote h4 {
+    margin-top: 1%;
     font-size: medium;
     text-align: justify;
     text-align-last: center;
+    line-height: 2;
     color: #000000;
 }
 .eachContainerQuote h6 {
@@ -347,11 +353,10 @@ p {
     }
     .eachContainerQuote {
         width: 100%;
+        padding:2% 3%;
         font-size: larger;
-        padding: 54px;
-        
         box-shadow: 0 0 5px #94145b, 0 0 10px #94145b;
-        margin: 52px;
+        margin: 4%;
         background-color: white;
     }
     .eachContainerQuote p {
@@ -389,7 +394,8 @@ input[type=text] {
     display: flex;
     background-color: #94145b;
     justify-content: center;
-    text-align-last: center;}
+    text-align-last: center;
+}
 .searchBar .text{
     background-color: #94145b;
 }
@@ -426,12 +432,32 @@ input[type=text] {
     display: inline-flex;
   }
   #btnSearch{
+      width: 250px;
       background-color: white;
       color:#94145b ;
       justify-content: center;
+      border: 2px solid #ccc;
+    border-radius: 4px;
   }
+  #btnSearch:hover{
+    width: 260px;
+    background-color: rgb(0, 0, 0);
+    color:#ffffff ;
+}
 .searchForm{
     display: flex;
+}
+.searchForm label{
+    place-self: center;
+}
+
+.searchForm input{
+    place-self: center;
+
+}
+.likeForm{
+    display: flex;
+    flex-direction: row-reverse;
 }
 
 @media only screen and ( max-width: 968px) {
@@ -446,5 +472,13 @@ input[type=text] {
     .searchForm label{
         display: flex;
 
+    }
+
+    .searchBar{
+        display: flex;
+        flex-flow: column;
+        background-color: #94145b;
+        justify-content: center;
+        text-align-last: center;
     }
 }
