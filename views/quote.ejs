@@ -58,7 +58,7 @@
                             <%= quote.quote %>
                         </h4>
                         <br><br>
-                        <h6>Category: Category
+                        <h6>Category:
                             <%= quote.category %>
                         </h6>
 
@@ -76,9 +76,9 @@
         </main>
 
 
-
         <%- include('partials/footer') %>
-            <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+                integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
             <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
             <script src="/app.js"></script>
             <script>
@@ -102,7 +102,13 @@
                         method: 'POST',
                         data: data
                     }).then(() => {
-                        swal('Liked!');
+
+                        swal({
+                            title: "Good job!",
+                            text: "Added to favorite !",
+                            icon: "success",
+                            button: "Done!",
+                        });
                     }).catch(error => console.log(error));
                 });
             </script>
