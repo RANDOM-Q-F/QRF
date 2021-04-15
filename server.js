@@ -73,7 +73,7 @@ function handleSearch(req, res) {
   superagent.get(url)
     .then(apiResponse => {
       if (apiResponse.status===200){
-        apiResponse.body.quotes.map(quote => new Quote(quote));}
+        return apiResponse.body.quotes.map(quote => new Quote(quote));}
       else{
         let arr = [{quote:'Try another one  ' , author: 'Devloper', category:'No Quote Found' , liked:false}];
         return arr;

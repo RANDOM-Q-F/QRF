@@ -183,8 +183,8 @@ p {
     text-align: justify;
     text-align-last: center;
     font-size: larger;
-    padding: 16px 44px;
-    line-height: 1.6;
+    padding: 3% 2%;    
+    line-height: 1.8;
 }
 
 .text hr {
@@ -440,7 +440,7 @@ input[type=text] {
     border-radius: 4px;
   }
   #btnSearch:hover{
-    width: 260px;
+    width: 250px;
     background-color: rgb(0, 0, 0);
     color:#ffffff ;
 }
